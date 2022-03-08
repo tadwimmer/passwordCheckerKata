@@ -7,10 +7,13 @@ class PasswordChecker:
         start = 'Password must'
         message = PasswordChecker.check_length(password)
         lower = PasswordChecker.check_lower_case(password)
+        upper = PasswordChecker.check_uppercase(password)
         if len(message) > 0 and len(lower) > 0:
             message = message + ' and' + lower
         elif len(message) == 0:
             message = lower
+        if len(message) == 0 and len(upper) > 0:
+            return start + upper
         if len(message) > 0:
             return start + message
 
@@ -27,5 +30,12 @@ class PasswordChecker:
         for c in password:
             if c.islower():
                 return ''
-        else:
-            return message
+        return message
+
+    @staticmethod
+    def check_uppercase(password):
+        message = ' contain at least one uppercase letter'
+        for c in password:
+            if c.isupper():
+                return ''
+        return message
