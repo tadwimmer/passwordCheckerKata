@@ -11,5 +11,5 @@ At least one character must be a number
 At least one character must be a symbol in !@#$%^&*()?
 
 The password checker should return an error message when 
-a submitted password fails to meet one of the checks above, 
-describinbg the missed element or check.
+a submitted password fails to meet any of the checks above, 
+describinbg the missed element(s) or check9s).
